@@ -9,7 +9,7 @@ import { CanActivate, Router } from '@angular/router';
     constructor(private route: Router) {}
 
     canActivate() {
-      const token = false;
+      const token = true;
       // validar si hay token
       if (token) {
         
