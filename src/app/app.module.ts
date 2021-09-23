@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MenuComponent } from './componentes/menu/menu.component';
     InicioComponent, 
     AdministrarComponent,
     OtroComponent,
-    MenuComponent
+    MenuComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,

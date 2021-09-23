@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ComponentesRoutes } from './componentes.routing';
 import { MenuComponent } from './menu/menu.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 @NgModule({
     imports: [
