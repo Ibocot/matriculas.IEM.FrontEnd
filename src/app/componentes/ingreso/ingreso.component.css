@@ -1,0 +1,53 @@
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+
+.div-cont {
+    position: absolute;
+}
+
+.div-cont-left {
+    text-align: center;
+    float: left;
+    width: 45%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.div-cont-right {
+    margin-left: 45%;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-f {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-log {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover) {
+    .image-log {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+@media (max-width: 768px) {
+    .div-cont-left {
+        width: 100% !important;
+        position: fixed;
+    }
+    .div-cont-right {
+        display: none;
+        float: left;
+    }
+}

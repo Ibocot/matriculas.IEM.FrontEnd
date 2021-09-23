@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
+  hide = true;
+  hide1 = true;
+
   constructor() { }
 
   ngOnInit(): void {

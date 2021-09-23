@@ -1,1 +1,81 @@
-<p>ingreso works!</p>
+<div class="div-cont">
+    <div class="div-cont-left">
+        <div class="login-f">
+            <h3>Bienvenido</h3>
+            <p>Iniciar sesión</p>
+            <div class="card">
+                <div class="card-body">
+                    <form #ingreso="ngForm">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Correo electrónico</mat-label>
+                            <input type="email" matInput placeholder="correo@dominio.com" name="correo" ngModel #correo="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                            <mat-error *ngIf="correo.hasError('pattern') && !correo.hasError('required')">
+                                Debe ingresar un correo válido
+                            </mat-error>
+                            <mat-error *ngIf="correo.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" name="clave" ngModel #clave="ngModel" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide" type="button">
+                              <span class="material-icons">{{hide ? 'visibility_off' : 'visibility'}}</span>
+                            </button>
+                            <mat-error *ngIf="clave.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+                        <button mat-flat-button color="primary" type="submit" [disabled]="!ingreso.valid">Ingresar</button>
+
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="example-button-row">
+                <a mat-button routerLink='/registro'>Registrarse</a>
+            </div>
+            <!-- <div class="card" *ngIf="register">
+                <div class="card-body" style="text-align: left !important;">
+                    <br>
+                    <form (ngSubmit)="onSubmit(allForm)" #allForm="ngForm">
+                        <span class="material-icons icon_back" (click)="exitForm(allForm)">arrow_back</span>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Código</mat-label>
+                            <input matInput type="tel" placeholder="Código" maxlength="9" name="code" ngModel #code="ngModel" pattern="[0-9]*" required>
+                            <mat-error *ngIf="code.errors?.pattern">
+                                Debe ingresar números sin puntos o comas
+                            </mat-error>
+                        </mat-form-field>
+                        <span>Tipo de consumo</span>
+                        <mat-radio-group class="example-radio-group" name="type_con" ngModel #type_con="ngModel" required>
+                            <ng-container *ngFor="let item of listTypes">
+                                <mat-radio-button class="example-radio-button" color="primary" [value]="item.id">{{item.nombre}}</mat-radio-button>
+                            </ng-container>
+                        </mat-radio-group>
+                        <span>Lugar</span>
+                        <mat-radio-group class="example-radio-group" name="site" ngModel #site="ngModel" required>
+                            <ng-container *ngFor="let item of listSites">
+                                <mat-radio-button class="example-radio-button" color="primary" [value]="item.id">{{item.nombre}}</mat-radio-button>
+                            </ng-container>
+                        </mat-radio-group>
+                        <ngb-alert (closed)="reserAlert()" *ngIf="alert.view" [type]="alert.type">{{alert.message}}</ngb-alert>
+                        <div class="example-button-row">
+                            <button mat-stroked-button (click)="clearData(allForm)" type="button">Limpiar datos</button>
+                            <button mat-flat-button color="primary" type="submit" [disabled]="!allForm.valid">Registrar</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+    <div class="div-cont-right">
+        <img class="image-log" src="../../../assets/imagenes/ingreso.jpg" alt="background">
+    </div>
+</div>

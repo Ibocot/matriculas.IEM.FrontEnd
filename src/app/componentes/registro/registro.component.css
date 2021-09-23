@@ -1,0 +1,52 @@
+.contenedor-main {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.contenedor {
+    z-index: 100;
+    position: relative;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background: #F8F9F9;
+    padding: 5px;
+    height: 100vh;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.75);
+}
+
+.imagen-fondo {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    filter: blur(4px) brightness(60%) !important
+}
+
+@supports(object-fit: cover) {
+    .imagen-fondo {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+
+/* @media (min-width: $min-tablet) and (max-width: $max-tablet) { } */
+
+@media (max-width: 800px) {
+    .contenedor {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenedor {
+        width: 90%;
+    }
+}

@@ -1,1 +1,116 @@
-<p>registro works!</p>
+<div class="contenedor-main">
+    <div class="contenedor">
+        <div class="container">
+            <h2 class="text-center">Registrarse</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit tempore, mollitia dolorem eos odit iusto animi? Sint, aliquam, corporis dignissimos nostrum, fuga debitis ad cumque ipsam saepe dolore deserunt laborum?</p>
+
+            <form #registro="ngForm">
+                <hr>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Primer nombre</mat-label>
+                            <input type="text" matInput placeholder="Primer nombre" name="primer_nombre" ngModel #primer_nombre="ngModel" required>
+                            <mat-error *ngIf="primer_nombre.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Segundo nombre</mat-label>
+                            <input type="text" matInput placeholder="Primer nombre" name="segundo_nombre" ngModel #segundo_nombre="ngModel" required>
+                            <mat-error *ngIf="segundo_nombre.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Primer apellido</mat-label>
+                            <input type="text" matInput placeholder="Primer nombre" name="primer_apellido" ngModel #primer_apellido="ngModel" required>
+                            <mat-error *ngIf="primer_apellido.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Segundo apellido</mat-label>
+                            <input type="text" matInput placeholder="Primer nombre" name="segundo_apellido" ngModel #segundo_apellido="ngModel" required>
+                            <mat-error *ngIf="segundo_apellido.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Tipo documento</mat-label>
+                            <select matNativeControl name="documento_identidad" ngModel #documento_identidad="ngModel" required>
+                              <option value="" selected></option>
+                              <option value="1">Cedula</option>
+                              <option value="2">Tarjeta</option>
+                            </select>
+                            <mat-error *ngIf="documento_identidad.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Número documento</mat-label>
+                            <input type="tel" matInput placeholder="Primer nombre" name="numero_documento" ngModel #numero_documento="ngModel" required>
+                            <mat-error *ngIf="numero_documento.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Correo electrónico</mat-label>
+                            <input type="email" matInput placeholder="correo@dominio.com" name="correo_electronico" ngModel #correo_electronico="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                            <mat-error *ngIf="correo_electronico.hasError('pattern') && !correo_electronico.hasError('required')">
+                                Debe ingresar un correo válido
+                            </mat-error>
+                            <mat-error *ngIf="correo_electronico.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Crar contraseña</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" name="clave" ngModel #clave="ngModel" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide" type="button">
+                              <span class="material-icons">{{hide ? 'visibility_off' : 'visibility'}}</span>
+                            </button>
+                            <mat-error *ngIf="clave.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Repetir contraseña</mat-label>
+                            <input matInput [type]="hide1 ? 'password' : 'text'" placeholder="Contraseña" name="clave1" ngModel #clave1="ngModel" required>
+                            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide1" type="button">
+                              <span class="material-icons">{{hide ? 'visibility_off' : 'visibility'}}</span>
+                            </button>
+                            <mat-error *ngIf="clave1.hasError('required')">
+                                El campo es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <button mat-raised-button color="primary" class="example-full-width" type="submit" [disabled]="!registro.valid">Registrarse</button>
+            </form>
+            <br>
+            <div class="example-button-row text-center">
+                <a mat-button routerLink='/ingreso'>Volver</a>
+            </div>
+        </div>
+    </div>
+    <img src="../../../assets/imagenes/registro.jpg" alt="fondo" class="imagen-fondo">
+</div>
