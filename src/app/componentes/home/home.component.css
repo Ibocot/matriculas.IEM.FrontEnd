@@ -14,7 +14,7 @@
 .letra-uno {
     margin-left: auto;
     margin-right: auto;
-    color: #fff;
+    color: #fff !important;
 }
 
 .contenedor-dos {
@@ -40,4 +40,72 @@
     margin-top: 30px;
     display: flex;
     align-items: center;
+}
+
+.centrar-vertical {
+    margin-top: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-cuatro {
+    margin-top: 55px;
+    background: #F1F4F4;
+}
+
+.contenedor-texto-cuatro {
+    padding: 0px 90px;
+    display: flex;
+    align-items: center;
+}
+
+.imagen-cuadro-cuatro {
+    width: 80%;
+    border-radius: 50% !important;
+    height: auto;
+    max-height: 300px;
+}
+
+.footer {
+    padding: 40px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.boton-redes-1 {
+    background: #fff;
+    color: #3b5998;
+}
+
+.boton-redes-2 {
+    background: #fff;
+    color: #00acee;
+    margin-left: 10px;
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+    .contenedor-tres {
+        padding: 0px 80px;
+    }
+    .contenedor-texto-cuatro {
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 499px) {
+    .contenedor-dos {
+        padding: 0px 20px;
+    }
+    .contenedor-tres {
+        padding: 0px 20px;
+        text-align: center;
+    }
+    .contenedor-texto-cuatro {
+        text-align: center;
+        padding: 0px 20px;
+    }
+    .footer {
+        padding: 40px 20px;
+        text-align: center;
+    }
 }

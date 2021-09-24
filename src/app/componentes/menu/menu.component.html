@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light menu-iem">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" [routerLink]="['/home']">
             <img src="../../../assets/imagenes/logo.png" alt="" width="50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,15 +8,16 @@
       </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li class="nav-item item-menu-iem" [routerLink]="['/home']">
                     <a class="nav-link active" aria-current="page">Inicio</a>
                 </li>
-                <li class="nav-item" *ngIf="isAdmin">
+                <li class="nav-item item-menu-iem" *ngIf="isAdmin" [routerLink]="['/admin/administrador']">
                     <a class="nav-link active" aria-current="page">Administrar</a>
                 </li>
 
             </ul>
-            <button mat-button routerLink='/ingreso'>Ingresar</button>
+            <button mat-button routerLink='/ingreso' *ngIf="!isAdmin">Ingresar</button>
+            <button mat-button (click)="cerrarSesion()" *ngIf="isAdmin">Cerrar sesión</button>
         </div>
     </div>
 </nav>

@@ -14,7 +14,7 @@ export const Approutes: Routes = [
         children: [
             {
                 path: 'admin',
-                redirectTo: '/administrador',
+                redirectTo: 'administrador',
                 pathMatch: 'full'
             },
             {

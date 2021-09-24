@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,11 +10,17 @@ export class MenuComponent implements OnInit {
 
   isAdmin: boolean = false;
 
-  constructor() {
+  constructor(private route: Router) {
     this.isAdmin = localStorage.getItem('sesion') ? true: false;
   }
 
   ngOnInit(): void {
+  }
+
+  cerrarSesion() {
+    localStorage.clear();
+    this.isAdmin = false;
+    this.route.navigate(['/ingreso']);
   }
 
 }
