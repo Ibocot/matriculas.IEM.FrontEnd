@@ -29,7 +29,7 @@ export class IngresoComponent implements OnInit {
     this.http.post(Constantes.URL + Constantes.INGRESO, datos).
     subscribe((respuesta: any) => {
       localStorage.setItem('sesion', 'askhjdbasjhdb23423423jasd*:..sadjas');
-      this.route.navigate(['/administrador']);
+      this.route.navigate(['admin/administrador']);
     }, (error: any) => {
       console.log(error);
       this.errorIngreso = true;

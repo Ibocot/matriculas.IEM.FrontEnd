@@ -13,7 +13,7 @@ import { CanActivate, Router } from '@angular/router';
       if (token) {
         return true;
       } else {
-        this.route.navigate(['principal']);
+        this.route.navigate(['/principal/home']);
         localStorage.clear();
         return false;
       }

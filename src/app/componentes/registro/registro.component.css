@@ -1,8 +1,6 @@
 .contenedor-main {
     width: 100vw !important;
-    height: 100vh !important;
-    object-fit: cover;
-    object-position: center center;
+    height: auto;
 }
 
 .contenedor {
@@ -24,8 +22,11 @@
     position: absolute;
     width: 100%;
     height: auto;
+    min-height: 100vh !important;
     top: 0;
-    filter: blur(4px) brightness(60%) !important
+    filter: blur(4px) brightness(60%) !important;
+    object-fit: cover;
+    object-position: center center;
 }
 
 @supports(object-fit: cover) {
@@ -48,5 +49,6 @@
 @media (max-width: 400px) {
     .contenedor {
         width: 90%;
+        height: calc(100vh + 100px);
     }
 }

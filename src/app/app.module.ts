@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
+import { HomeComponent } from './componentes/home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PrincipalComponent } from './componentes/principal/principal.component'
     AdministrarComponent,
     OtroComponent,
     MenuComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

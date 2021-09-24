@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ComponentesRoutes } from './componentes.routing';
 import { MenuComponent } from './menu/menu.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
     imports: [

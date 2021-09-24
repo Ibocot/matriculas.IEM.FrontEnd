@@ -1,0 +1,43 @@
+.contenedor {}
+
+.contenedor-uno {
+    width: 100% !important;
+    height: calc(100vh - 200px);
+    background-image: url('../../../assets/imagenes/home1.jpg');
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.letra-uno {
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.contenedor-dos {
+    margin-top: 100px;
+    padding: 0px 80px;
+}
+
+.icon-dos {
+    font-size: 35px;
+    color: #fda301 !important;
+}
+
+.contenedor-tres {
+    margin-top: 55px;
+    padding: 0px 150px;
+}
+
+.imagen-tres {
+    width: 90%;
+}
+
+.contenedor-texto-tres {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}

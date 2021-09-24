@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <mat-form-field class="example-full-width">
-                            <mat-label>Crar contraseña</mat-label>
+                            <mat-label>Crear contraseña</mat-label>
                             <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" name="clave" ngModel #clave="ngModel" required>
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide" type="button">
                               <span class="material-icons">{{hide ? 'visibility_off' : 'visibility'}}</span>
@@ -112,7 +112,7 @@
 
             <br>
             <div class="example-button-row text-center">
-                <a mat-button routerLink='/principal/ingreso'>Volver</a>
+                <a mat-button routerLink='/ingreso'>Volver</a>
             </div>
         </div>
     </div>
