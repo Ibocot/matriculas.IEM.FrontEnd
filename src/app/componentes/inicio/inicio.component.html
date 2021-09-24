@@ -1,1 +1,45 @@
-<p>inicio works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5 class="card-title">Información de usuario</h5>
+                    <h5 class="card-title">{{informacionEstudiante.primer_nombre}} {{informacionEstudiante.segundo_nombre}} {{informacionEstudiante.primer_apellido}} {{informacionEstudiante.segundo_apellido}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ informacionEstudiante.documento_identidad }} - {{ informacionEstudiante.numero_documento}}</h6>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="card-title">Matriculas</h5>
+                    <ul>
+                        <li *ngFor="let item of informacionMatricula">{{ item.curso.letra }} - {{ item.curso.alias }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Cursos</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Número</th>
+                        <th scope="col">Letra</th>
+                        <th scope="col">Alias</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of informacionCurso">
+                        <td>{{ item.numero }}</td>
+                        <td>{{ item.letra }}</td>
+                        <td>{{ item.alias }}</td>
+                        <td>
+                            <button mat-stroked-button color="primary" (click)="matricular(item.id)">Matricular</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
