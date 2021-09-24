@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  isAdmin: boolean = false;
+
+  constructor() {
+    this.isAdmin = localStorage.getItem('sesion') ? true: false;
+  }
 
   ngOnInit(): void {
   }

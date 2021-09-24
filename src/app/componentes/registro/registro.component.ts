@@ -14,12 +14,6 @@ export class RegistroComponent implements OnInit {
   hide1 = true;
 
   constructor(private http: HttpClient) {
-    this.http.get(Constantes.URL + Constantes.ESTUDIANTES).
-    subscribe((resp:any) => {
-      console.log(resp);
-    }, (error: any) => {
-      console.log(error);
-    });
   }
 
   ngOnInit(): void {

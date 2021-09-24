@@ -9,15 +9,14 @@ import { CanActivate, Router } from '@angular/router';
     constructor(private route: Router) {}
 
     canActivate() {
-      const token = false;
-      // validar si hay token
+      const token = localStorage.getItem('sesion');
       if (token) {
-        
+        return true;
       } else {
-        this.route.navigate(['ingreso']);
+        this.route.navigate(['principal']);
+        localStorage.clear();
         return false;
       }
-      return true;
     }
 
   }
